@@ -8,3 +8,7 @@ variable "name" {
   description = "Name of the basic auth secret to create."
 }
 
+variable "annotations" {
+  type        = map(string)
+  description = "Any annotations you would like to include in the metadata."
+}

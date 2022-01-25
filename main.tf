@@ -12,8 +12,9 @@ data "external" "htpasswd" {
 
 resource "kubernetes_secret" "basic-auth" {
   metadata {
-    name      = var.name
-    namespace = var.namespace
+    name        = var.name
+    namespace   = var.namespace
+    annotations = var.annotations
   }
   data = {
     auth = data.external.htpasswd.result.file
