@@ -1,6 +1,7 @@
 resource "random_string" "password" {
   length  = 48
-  special = true
+  special = false
+  upper   = false
 }
 
 data "external" "htpasswd" {
